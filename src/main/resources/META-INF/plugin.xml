@@ -1,0 +1,32 @@
+<idea-plugin>
+    <id>de.unruh.onthefly</id>
+    <name>TODO: Proper name</name>
+    <vendor email="dominique@unruh.de" url="http://unruh.de">Dominique Unruh</vendor>
+
+    <description><![CDATA[
+    Just testing. ........................................
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="Simple File" implementationClass="de.unruh.onthefly.SimpleFileType"
+            fieldName="INSTANCE" language="Simple" extensions="simple"/>
+        <lang.parserDefinition language="Simple"
+            implementationClass="de.unruh.onthefly.SimpleParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="Simple"
+            implementationClass="de.unruh.onthefly.SimpleSyntaxHighlighterFactory"/>
+        <annotator language="Simple" implementationClass="de.unruh.onthefly.SimpleAnnotator"/>
+        <codeInsight.inlayProvider language="Simple" implementationClass="de.unruh.onthefly.SimpleInlayProvider"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="de.unruh.onthefly.PopupDialogAction" class="de.unruh.onthefly.PopupDialogAction" text="Show Popup 8"
+            description="Some useless dialog">
+            <add-to-group group-id="ToolsMenu" anchor="last" />
+        </action>
+    </actions>
+</idea-plugin>

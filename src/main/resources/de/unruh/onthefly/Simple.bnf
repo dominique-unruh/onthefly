@@ -1,0 +1,22 @@
+{
+  parserClass="de.unruh.onthefly.parser.SimpleParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Simple"
+  psiImplClassSuffix="Impl"
+  psiPackage="de.unruh.onthefly.psi"
+  psiImplPackage="de.unruh.onthefly.psi.impl"
+
+  elementTypeHolderClass="de.unruh.onthefly.psi.SimpleTypes"
+  elementTypeClass="de.unruh.onthefly.psi.SimpleElementType"
+  tokenTypeClass="de.unruh.onthefly.psi.SimpleTokenType"
+
+  psiImplUtilClass="de.unruh.onthefly.psi.impl.SimplePsiImplUtil"
+}
+
+simpleFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY {methods=[getKey getValue]}
