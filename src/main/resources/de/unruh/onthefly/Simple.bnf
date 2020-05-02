@@ -17,6 +17,36 @@
 
 simpleFile ::= item_*
 
-private item_ ::= (property|COMMENT|CRLF)
+private item_ ::= (assignment|COMMENT|CRLF)
 
-property ::= (KEY? SEPARATOR VALUE?) | KEY {methods=[getKey getValue]}
+assignment ::= (IDENTIFIER ASSIGN expression)
+    {methods=[getVariable getInlay]
+     implements="de.unruh.onthefly.inlays.PsiWithInlay"}
+
+atom ::= (variable | numeral)
+    {methods=[getExpression]
+     implements="de.unruh.onthefly.PsiExpression"}
+
+variable ::= IDENTIFIER
+    {methods=[getExpression]
+     implements="de.unruh.onthefly.PsiExpression"}
+
+numeral ::= INT
+    {methods=[getExpression]
+     implements="de.unruh.onthefly.PsiExpression"}
+
+expression ::= (infixExpression | prefixExpression)
+    {methods=[getExpression]
+     implements="de.unruh.onthefly.PsiExpression"}
+
+infixOp ::= (PLUS|DIV|MINUS|TIMES)
+
+infixExpression ::= (atom infixOp atom)
+    {methods=[getExpression]
+     implements="de.unruh.onthefly.PsiExpression"}
+
+prefixOp ::= (MINUS|SQRT)
+
+prefixExpression ::= (prefixOp atom)
+    {methods=[getExpression]
+     implements="de.unruh.onthefly.PsiExpression"}

@@ -1,9 +1,10 @@
-package de.unruh.onthefly;
+package de.unruh.onthefly.inlays;
 
 import com.intellij.codeInsight.hints.*;
 import com.intellij.lang.Language;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.psi.PsiFile;
+import de.unruh.onthefly.SimpleLanguage;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -11,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 
 @SuppressWarnings("UnstableApiUsage")
-public class SimpleInlayProvider implements InlayHintsProvider<String> {
+public class Provider implements InlayHintsProvider<String> {
     @Override
     public boolean isVisibleInSettings() {
         return false;
@@ -59,7 +60,7 @@ public class SimpleInlayProvider implements InlayHintsProvider<String> {
     @Nullable
     @Override
     public InlayHintsCollector getCollectorFor(@NotNull PsiFile psiFile, @NotNull Editor editor, @NotNull String s, @NotNull InlayHintsSink inlayHintsSink) {
-        return new SimpleInlayCollector();
+        return new Collector();
     }
 
     @Override
