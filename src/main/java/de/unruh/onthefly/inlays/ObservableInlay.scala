@@ -14,3 +14,10 @@ class ObservableInlay(observable: Observable[Drawable], initial: Drawable = Load
   override def paintInlay(g: Graphics2D, width: Int, height: Int): Unit =
     current.paint(g)
 }
+
+object ObservableInlay {
+  def apply(drawable : Drawable): ObservableInlay =
+    new ObservableInlay(Observable.empty[Drawable], drawable)
+  def apply(text : String): ObservableInlay =
+    ObservableInlay(TextDrawable(text))
+}

@@ -20,7 +20,9 @@ simpleFile ::= item_*
 private item_ ::= (assignment|COMMENT|CRLF)
 
 assignment ::= (IDENTIFIER ASSIGN expression)
-    {methods=[getVariable getInlay]
+    {
+//    methods=[getVariable getInlay getPrevious getPreviousEnvironment getEnvironment getEvaluatedExpression]
+     mixin="de.unruh.onthefly.unsorted.SimpleAssignmentMixin"
      implements="de.unruh.onthefly.inlays.PsiWithInlay"}
 
 atom ::= (variable | numeral)
