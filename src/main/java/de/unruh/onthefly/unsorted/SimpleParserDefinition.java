@@ -1,15 +1,14 @@
 // Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
-package de.unruh.onthefly;
+package de.unruh.onthefly.unsorted;
 
 import com.intellij.lang.*;
 import com.intellij.lexer.Lexer;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.tree.*;
-import de.unruh.onthefly.parser.SimpleParser;
-import de.unruh.onthefly.psi.SimpleFile;
-import de.unruh.onthefly.psi.SimpleTypes;
+import de.unruh.onthefly.unsorted.parser.SimpleParser;
+import de.unruh.onthefly.unsorted.psi.SimpleTypes;
 import org.jetbrains.annotations.NotNull;
 
 public class SimpleParserDefinition implements ParserDefinition {

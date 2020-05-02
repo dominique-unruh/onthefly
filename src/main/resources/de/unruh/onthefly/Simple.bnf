@@ -1,18 +1,18 @@
 {
-  parserClass="de.unruh.onthefly.parser.SimpleParser"
+  parserClass="de.unruh.onthefly.unsorted.parser.SimpleParser"
 
   extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
 
   psiClassPrefix="Simple"
   psiImplClassSuffix="Impl"
-  psiPackage="de.unruh.onthefly.psi"
-  psiImplPackage="de.unruh.onthefly.psi.impl"
+  psiPackage="de.unruh.onthefly.unsorted.psi"
+  psiImplPackage="de.unruh.onthefly.unsorted.psi.impl"
 
-  elementTypeHolderClass="de.unruh.onthefly.psi.SimpleTypes"
-  elementTypeClass="de.unruh.onthefly.psi.SimpleElementType"
-  tokenTypeClass="de.unruh.onthefly.psi.SimpleTokenType"
+  elementTypeHolderClass="de.unruh.onthefly.unsorted.psi.SimpleTypes"
+  elementTypeClass="de.unruh.onthefly.unsorted.SimpleElementType"
+  tokenTypeClass="de.unruh.onthefly.unsorted.SimpleTokenType"
 
-  psiImplUtilClass="de.unruh.onthefly.psi.impl.SimplePsiImplUtil"
+  psiImplUtilClass="de.unruh.onthefly.unsorted.SimplePsiImplUtil"
 }
 
 simpleFile ::= item_*
@@ -25,28 +25,28 @@ assignment ::= (IDENTIFIER ASSIGN expression)
 
 atom ::= (variable | numeral)
     {methods=[getExpression]
-     implements="de.unruh.onthefly.PsiExpression"}
+     implements="de.unruh.onthefly.unsorted.PsiExpression"}
 
 variable ::= IDENTIFIER
     {methods=[getExpression]
-     implements="de.unruh.onthefly.PsiExpression"}
+     implements="de.unruh.onthefly.unsorted.PsiExpression"}
 
 numeral ::= INT
     {methods=[getExpression]
-     implements="de.unruh.onthefly.PsiExpression"}
+     implements="de.unruh.onthefly.unsorted.PsiExpression"}
 
 expression ::= (infixExpression | prefixExpression)
     {methods=[getExpression]
-     implements="de.unruh.onthefly.PsiExpression"}
+     implements="de.unruh.onthefly.unsorted.PsiExpression"}
 
 infixOp ::= (PLUS|DIV|MINUS|TIMES)
 
 infixExpression ::= (atom infixOp atom)
     {methods=[getExpression]
-     implements="de.unruh.onthefly.PsiExpression"}
+     implements="de.unruh.onthefly.unsorted.PsiExpression"}
 
 prefixOp ::= (MINUS|SQRT)
 
 prefixExpression ::= (prefixOp atom)
     {methods=[getExpression]
-     implements="de.unruh.onthefly.PsiExpression"}
+     implements="de.unruh.onthefly.unsorted.PsiExpression"}

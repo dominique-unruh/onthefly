@@ -1,8 +1,8 @@
-package de.unruh.onthefly;
+package de.unruh.onthefly.unsorted;
 
 import com.intellij.lexer.FlexLexer;
 import com.intellij.psi.tree.IElementType;
-import de.unruh.onthefly.psi.SimpleTypes;
+import de.unruh.onthefly.unsorted.psi.SimpleTypes;
 import com.intellij.psi.TokenType;
 
 %%

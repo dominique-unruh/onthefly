@@ -1,12 +1,12 @@
 // Copyright 2000-2020 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 
-package de.unruh.onthefly.psi;
+package de.unruh.onthefly.unsorted;
 
 import com.intellij.extapi.psi.PsiFileBase;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.psi.FileViewProvider;
-import de.unruh.onthefly.SimpleFileType;
-import de.unruh.onthefly.SimpleLanguage;
+import de.unruh.onthefly.unsorted.SimpleFileType;
+import de.unruh.onthefly.unsorted.SimpleLanguage;
 import org.jetbrains.annotations.NotNull;
 
 public class SimpleFile extends PsiFileBase {

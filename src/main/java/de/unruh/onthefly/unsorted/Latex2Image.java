@@ -1,4 +1,4 @@
-package de.unruh.onthefly;
+package de.unruh.onthefly.unsorted;
 
 import com.intellij.ui.JBColor;
 import org.scilab.forge.jlatexmath.TeXFormula;

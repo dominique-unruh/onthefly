@@ -12,10 +12,10 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <fileType name="Simple File" implementationClass="de.unruh.onthefly.SimpleFileType"
+        <fileType name="Simple File" implementationClass="de.unruh.onthefly.unsorted.SimpleFileType"
             fieldName="INSTANCE" language="Simple" extensions="simple"/>
         <lang.parserDefinition language="Simple"
-            implementationClass="de.unruh.onthefly.SimpleParserDefinition"/>
+            implementationClass="de.unruh.onthefly.unsorted.SimpleParserDefinition"/>
         <codeInsight.inlayProvider language="Simple" implementationClass="de.unruh.onthefly.inlays.Provider"/>
     </extensions>
 </idea-plugin>

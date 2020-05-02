@@ -4,7 +4,7 @@ import com.intellij.codeInsight.hints.*;
 import com.intellij.lang.Language;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.psi.PsiFile;
-import de.unruh.onthefly.SimpleLanguage;
+import de.unruh.onthefly.unsorted.SimpleLanguage;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

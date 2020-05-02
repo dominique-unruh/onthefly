@@ -1,5 +1,6 @@
 plugins {
-    id 'java'
+    id 'java-library'
+    id 'scala'
     id 'org.jetbrains.intellij' version '0.4.18'
 }
 
@@ -11,15 +12,22 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-// https://mvnrepository.com/artifact/org.scilab.forge/jlatexmath
-    compile group: 'org.scilab.forge', name: 'jlatexmath', version: '1.0.7'
+    testCompileOnly group: 'junit', name: 'junit', version: '4.12'
+
+    // https://mvnrepository.com/artifact/org.scilab.forge/jlatexmath
+    implementation group: 'org.scilab.forge', name: 'jlatexmath', version: '1.0.7'
+
+    // https://mvnrepository.com/artifact/org.scala-lang/scala-library
+    implementation group: 'org.scala-lang', name: 'scala-library', version: '2.13.2'
+
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.3'
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     version '2020.1.1'
 }
+
 patchPluginXml {
     changeNotes """
       Add change notes here.<br>
@@ -29,7 +37,10 @@ patchPluginXml {
 sourceSets {
     main {
         java {
-            srcDir "src/main/gen"
+            srcDirs = []
+        }
+        scala {
+            srcDirs = ['src/main/gen', "src/main/java"]
         }
     }
 }
