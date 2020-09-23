@@ -12,7 +12,9 @@ repositories {
 }
 
 dependencies {
-    testCompileOnly group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/org.scalatest/scalatest
+    testCompile group: 'org.scalatest', name: 'scalatest_2.13', version: '3.1.2'
 
     // https://mvnrepository.com/artifact/org.scilab.forge/jlatexmath
     implementation group: 'org.scilab.forge', name: 'jlatexmath', version: '1.0.7'
@@ -25,7 +27,7 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2020.1.1'
+    version '2020.2'
 }
 
 patchPluginXml {
